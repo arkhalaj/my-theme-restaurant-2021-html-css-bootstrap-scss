@@ -1,0 +1,454 @@
+@import "mixin";
+@import "data";
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: url('../fonts/Yekan.eot?#') format('eot'), url('../fonts/Yekan.woff') format('woff'), url('../fonts/Yekan.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSansWeb.eot') format('eot'), url('../fonts/IRANSansWeb.woff') format('woff'), url('../fonts/IRANSansWeb.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'hekayat';
+    src: url('../fonts/hekayat.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+::-webkit-scrollbar{
+    background-color: $color-dark;
+    width: 8px;
+}
+::-webkit-scrollbar-corner{
+    @extend ::-webkit-scrollbar ,;
+}
+::-webkit-scrollbar-thumb {
+    background: $color-gold;
+    border-radius: 20px;
+    &:hover{
+        background-color: $color-gold;
+
+    }
+  }
+body {
+    font-family: $font-hekayat,$font-yekan ,$font-iransans,;
+    direction: rtl;
+    font-size: 20px;
+}
+.header-bg{
+    background-color: $color-dark;
+    min-height: 8vh;
+}
+.header{
+    display: flex;
+    align-items: center;
+    min-height: 8vh;
+    justify-content: space-between;
+    a{
+        color: $color-gold;
+        text-decoration: none;
+        display: block;
+        &:hover{
+                color: darken($color-gold , 10%);
+        }
+    }
+    span{
+        color: #fff;
+        cursor:pointer;
+        margin-right: 10px;
+    }
+    img{
+        width: 55px;
+    }
+}
+.nav-bg{
+    background-color: $color-dark;
+    border-top: 0.5px solid #313131;
+}
+.nav-link{
+    text-align: center;
+    margin: 0px 10px !important;
+    &:focus , &:active{
+        color: $color-gold !important;
+    }
+}
+.intro{
+    background: url(../images/header.jpg) no-repeat center center fixed;
+    min-height:600px;
+    background-size: cover;
+    background-position: fixed;
+    .overlay-bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(33, 37, 41, 0.85);
+    }
+    .overlay{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        img{
+            width: 200px;
+            margin-top: 80px !important;
+            filter: drop-shadow(0 0 40px rgba(206, 212, 218, 0.4));
+            margin: auto;
+            @include bp-767 {
+                margin-top: 20px !important;
+            }
+
+        }
+        p{
+            color: #fff;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 20px;
+            @include bp-345 {
+                font-size: 25px;
+            }
+        }
+        h1{
+            @extend p,;
+            font-size: 100px;
+            margin-top: 0px;
+            @include bp-767 {
+                font-size: 70px;
+            }
+            @include bp-456 {
+                font-size: 50px;
+            }
+            @include bp-345 {
+                font-size: 40px;
+            }
+            
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            background-color: $color-gold;
+            text-align: center;
+            margin-top: 20px !important;
+            font-size: 30px;
+            margin: auto;
+            &:hover{
+                color: #000;
+            }
+
+        }
+    }
+}
+.about{
+    margin-top: 50px !important;
+    margin: auto;
+}
+.work-time{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    @include bp-767 {
+        a{
+            display: none !important;
+        }
+    }
+    @include bp-575 {
+        text-align: center;
+        a{
+            display: block !important;
+        }
+    }
+    @include bp-1199 {
+        margin-top: 30px !important;
+        p{
+            font-size: 18px;
+        }
+    }
+    @include bp-991 {
+        margin-top: 0px !important;
+        h1{
+            font-size: 30px;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+    a{
+        text-decoration: none;
+            color: #fff;
+            background-color: $color-gold;
+            text-align: center;
+            margin-top: 20px !important;
+            font-size: 20px;
+            margin: auto;
+            display: block;
+    }
+}
+.designe{
+    margin-top: 50px;
+}
+.menu{
+    margin-top: 50px;
+    display: flex;
+    h1{
+        text-align: center;
+    }
+}
+.img-card{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    @include bp-456 {
+        width: 80px;
+        height: 80px;
+    }
+    @include bp-345 {
+        width: 60px;
+        height: 60px;
+    }
+}
+.cardd{
+        text-decoration: none;
+        color: #000;
+        &:hover{
+            color: $color-gold !important;
+            .dish-body{color: $color-gold !important;}
+        }
+}
+.price{
+    color: $color-gold;
+}
+.dish-body{
+    color: lighten($color-dark , 30%) !important;
+    @include bp-991 {
+        font-size: 17px;
+    }
+}
+.dish-card{
+    margin-top: 20px;
+}
+.menu-bg{
+    background: url(../images/section.jpg) no-repeat center center fixed;
+    min-height:700px;
+    background-size: cover;
+    background-position: fixed;
+    margin-top: 50px;
+    @include bp-1399 {
+        min-height:800px !important;
+    }
+    @include bp-991 {
+        min-height:900px !important;
+    }
+    @include bp-767 {
+        min-height:1200px !important;
+    }
+    @include bp-324 {
+        min-height:1300px !important;
+    }
+}
+.overlay-menu-bg{
+    position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(33, 37, 41, 0.85);
+
+}
+.overlay-menu{
+    display: flex;
+        justify-content: center;
+        align-content: center;
+        .menu-title{
+            color: #fff;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 80px;
+            @include bp-345 {
+                font-size: 25px;
+            }
+        }
+}
+.menu-btn-box{
+    display: flex;
+}
+.menu-btn{
+    text-decoration: none;
+            color: #fff;
+            background-color: $color-gold;
+            text-align: center;
+            font-size: 20px;
+            margin: auto;
+            display: block;
+            padding: 0px 50px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+}
+.menu-list-bg{
+    min-height: 700px;
+}
+.team{
+    margin-top: 50px;
+    h1{
+        text-align: center;
+    }
+}
+.card{
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+    img{
+        width: 50%;
+        margin: auto;
+        @include bp-767 {
+            width: 30%;
+        }
+    }
+}
+.COSIAL{
+    a{
+        color: $color-gold !important;
+        font-size: 20px;
+        margin: 0px 15px;
+        &:hover{
+            color: darken($color-gold , 10%) !important;
+        }
+    }
+}
+.Clients{
+    @extend .team;
+}
+.Clients-title{
+    span{
+        font-size: 30px;
+    }
+    img{
+        width: 70px ;
+        margin-left: 20px;
+    }
+}
+.clients-items{
+    @extend .team;
+}
+.content {
+    @extend .team;
+}
+.content-items {
+    @extend .team;
+}
+.form-group{
+    margin-top: 30px;
+    
+    input , select{
+        font-size: 20px !important;
+    }
+}
+.btn-contact{
+    a{
+        text-decoration: none;
+            color: #fff;
+            background-color: $color-gold;
+            text-align: center;
+            font-size: 20px;
+            margin: auto;
+            display: block;
+            padding: 0px 50px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+    }
+}
+.form-contact{
+    height: 100%;
+    display: flex;
+    align-content: space-around;
+}
+.footer-bg{
+    @extend .header-bg;
+    margin-top: 50px
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    min-height: 8vh !important;   
+}
+.footer-img{
+    display: flex;
+    justify-content: flex-end;
+    @include bp-767 {
+        justify-content: center;
+    }
+    img{
+        width: 100px;
+        margin: 30px;
+        filter: drop-shadow(0 0 40px rgba(206, 212, 218, 0.4));
+        cursor: pointer;
+        
+    }
+}
+.footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    @include bp-767 {
+        justify-content: center;
+    }
+    min-height: 100px;
+    a{
+        color: #fff;
+    text-decoration: none;
+    min-width: 15% !important;
+    margin: 0px 10px;
+    text-align: center;
+    &:hover{
+        color: #d3d3d3;
+    }
+
+    }
+}
+.copyright{
+    min-height: 5vh !important;
+    background-color: $color-dark;
+    border-top: 0.5px solid #313131;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    cursor: pointer;
+    a{
+        color: $color-gold;
+        text-decoration: none;
+    }
+    span{
+        text-align: left;
+
+    }
+    span , a{
+        margin: 10px 0px !important;
+        @include bp-767 {
+            text-align: center;
+        }
+    }
+}
+.copyright-social{
+    margin-top: 10px !important;
+    a{
+        color: #fff !important;
+        margin: 0px 10px !important;
+        &:hover{
+            color: #d3d3d3 !important;
+        }
+        @include bp-767 {
+            display: none;
+        }
+    }
+}
