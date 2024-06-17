@@ -1,4 +1,4 @@
-# my-theme-restaurant-2021-html-css-bootstrap-scss
+# my-theme-restaurant-2021-html-css-bootstrap-scss-js
 This project is for restaurant and online table reservation, designed in 2023. Hope you enjoy :)
 
 Preview photo
